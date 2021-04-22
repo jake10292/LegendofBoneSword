@@ -1,11 +1,13 @@
-_G.deez = getgenv().autotp
-_G.nuts = getgenv().autohit
+_G.deez = getgenv().autotp --To customize what you want to farm, delete "getgenv().autotp" and put true
+_G.nuts = getgenv().autohit --Same as above
 
-local VirtualUser=game:service'VirtualUser' --Anti-AFK, not made by me.
-game:service'Players'.LocalPlayer.Idled:connect(function()
-  VirtualUser:CaptureController()
-  VirtualUser:ClickButton2(Vector2.new())
-end)
+local VirtualUser = game:service "VirtualUser" --Anti-AFK, not made by me.
+game:service "Players".LocalPlayer.Idled:connect(
+    function()
+        VirtualUser:CaptureController()
+        VirtualUser:ClickButton2(Vector2.new())
+    end
+)
 spawn(
     function()
         while _G.nuts do
@@ -13,15 +15,16 @@ spawn(
             wait()
         end
     end
-) 
+)
 
 while _G.deez do
     for i, v in pairs(game.Workspace.Enemies:GetDescendants()) do
-        if --Add it in this format, "v.Name == '[NPC NAME]' or"
-                v.Name == "Titan Fulmen" or 
-                v.Name == "Titan Volcanus" or 
-                v.Name == "Titan Glacies" or 
-                v.Name == "Terra" or
+        if
+            --Add it in this format, "v.Name == '[NPC NAME]' or"
+                v.Name == "Titan Fulmen" or
+                v.Name == "Titan Volcanus" or
+                v.Name == "Titan Glacies" or
+                v.Name == "Titan Terra" or
                 v.Name == "Titan Venenum" or
                 v.Name == "Titan Inani" or
                 v.Name == "Titan Vortex" or
@@ -34,11 +37,28 @@ while _G.deez do
                 v.Name == "Titan Vita" or
                 v.Name == "Immortal Bone Lord"
 
-          and v:FindFirstChild("HumanoidRootPart")
-          then
-            v.HumanoidRootPart.Anchored = true
-            v.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+         then
+            if v:FindFirstChild("HumanoidRootPart") then
+                if v:FindFirstChild("Left Leg") then
+                    v["Left Leg"]:Destroy()
+                    if v:FindFirstChild("Right Leg") then
+                        v["Right Leg"]:Destroy()
+                        if v:FindFirstChild("Left Arm") then
+                            v["Left Arm"]:Destroy()
+                            if v:FindFirstChild("Right Arm") then
+                                v["Right Arm"]:Destroy()
+                                if v:FindFirstChild("Head") then
+                                    v.Head:Destroy()
+                                    v.HumanoidRootPart.Anchored = true
+                                    v.HumanoidRootPart.CFrame =
+                                        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+                                end
+                            end
+                        end
+                    end
+                end
+            end
         end
     end
-    wait()
+    wait(0.1)
 end
