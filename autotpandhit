@@ -53,7 +53,6 @@ while _G.deez do
                                     v.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
                                     v.HumanoidRootPart.Transparency = 1
                                     v.Torso.Transparency = 1
-                                    v.HumanoidRootPart.HealthBar.Bar:Destroy()
                                 end
                             end
                         end
