@@ -51,6 +51,7 @@ while _G.deez do
                                     v.Head:Destroy()
                                     v.HumanoidRootPart.Anchored = true
                                     v.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+                                    v.HumanoidRootPart.Transparency = 1
                                 end
                             end
                         end
@@ -59,5 +60,5 @@ while _G.deez do
             end
         end
     end
-    wait(0.1)
+    wait(0.5)
 end
