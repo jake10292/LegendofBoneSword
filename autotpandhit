@@ -50,8 +50,8 @@ while _G.deez do
                                 if v:FindFirstChild("Head") then
                                     v.Head:Destroy()
                                     v.HumanoidRootPart.Anchored = true
-                                    v.HumanoidRootPart.CFrame =
-                                        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+                                    v.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+                                    v.Torso.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
                                 end
                             end
                         end
