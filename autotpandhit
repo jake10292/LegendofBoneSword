@@ -11,7 +11,7 @@ spawn(
         end
     end
 )
-while _G.dee do
+while _G.deez do
     for i, v in pairs(game.Workspace.Enemies:GetDescendants()) do
         if
             v.Name == "Titan Fulmen" or v.Name == "Titan Volcanus" or v.Name == "Titan Glacies" or v.Name == "Terra" or
