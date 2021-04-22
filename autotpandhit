@@ -1,7 +1,7 @@
 _G.deez = getgenv().autotp
 _G.nuts = getgenv().autohit
 
-local VirtualUser=game:service'VirtualUser'
+local VirtualUser=game:service'VirtualUser' --Anti-AFK, not made by me.
 game:service'Players'.LocalPlayer.Idled:connect(function()
   VirtualUser:CaptureController()
   VirtualUser:ClickButton2(Vector2.new())
@@ -13,7 +13,7 @@ spawn(
             wait()
         end
     end
-) --Anti-AFK, not made by me.
+) 
 
 while _G.deez do
     for i, v in pairs(game.Workspace.Enemies:GetDescendants()) do
@@ -33,7 +33,9 @@ while _G.deez do
                 v.Name == "Titan Aureus" or
                 v.Name == "Titan Vita" or
                 v.Name == "Immortal Bone Lord"
-         then
+
+          and v:FindFirstChild("HumanoidRootPart")
+          then
             v.HumanoidRootPart.Anchored = true
             v.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
         end
