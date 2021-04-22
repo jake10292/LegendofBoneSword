@@ -1,8 +1,11 @@
 _G.deez = getgenv().autotp
 _G.nuts = getgenv().autohit
-for i, v in pairs(getconnections(game:GetService("Players").LocalPlayer.Idled)) do
-    v:Disable()
-end
+
+local VirtualUser=game:service'VirtualUser'
+game:service'Players'.LocalPlayer.Idled:connect(function()
+  VirtualUser:CaptureController()
+  VirtualUser:ClickButton2(Vector2.new())
+end)
 spawn(
     function()
         while _G.nuts do
@@ -10,11 +13,15 @@ spawn(
             wait()
         end
     end
-)
+) --Anti-AFK, not made by me.
+
 while _G.deez do
     for i, v in pairs(game.Workspace.Enemies:GetDescendants()) do
-        if
-            v.Name == "Titan Fulmen" or v.Name == "Titan Volcanus" or v.Name == "Titan Glacies" or v.Name == "Terra" or
+        if --Add it in this format, "v.Name == '[NPC NAME]' or"
+                v.Name == "Titan Fulmen" or 
+                v.Name == "Titan Volcanus" or 
+                v.Name == "Titan Glacies" or 
+                v.Name == "Terra" or
                 v.Name == "Titan Venenum" or
                 v.Name == "Titan Inani" or
                 v.Name == "Titan Vortex" or
