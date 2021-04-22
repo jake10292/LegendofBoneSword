@@ -1,0 +1,35 @@
+_G.deez = getgenv().autotp
+_G.nuts = getgenv().autohit
+for i, v in pairs(getconnections(game:GetService("Players").LocalPlayer.Idled)) do
+    v:Disable()
+end
+spawn(
+    function()
+        while _G.nuts do
+            game:GetService("ReplicatedStorage").Remotes.UseItem:FireServer()
+            wait()
+        end
+    end
+)
+while _G.dee do
+    for i, v in pairs(game.Workspace.Enemies:GetDescendants()) do
+        if
+            v.Name == "Titan Fulmen" or v.Name == "Titan Volcanus" or v.Name == "Titan Glacies" or v.Name == "Terra" or
+                v.Name == "Titan Venenum" or
+                v.Name == "Titan Inani" or
+                v.Name == "Titan Vortex" or
+                v.Name == "Titan Vitreus" or
+                v.Name == "Titan Solis" or
+                v.Name == "Titan Subtus" or
+                v.Name == "Titan Duplex" or
+                v.Name == "Titan Mars" or
+                v.Name == "Titan Aureus" or
+                v.Name == "Titan Vita" or
+                v.Name == "Immortal Bone Lord"
+         then
+            v.HumanoidRootPart.Anchored = true
+            v.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+        end
+    end
+    wait()
+end
