@@ -35,7 +35,8 @@ while _G.deez do
                 v.Name == "Titan Mars" or
                 v.Name == "Titan Aureus" or
                 v.Name == "Titan Vita" or
-                v.Name == "Immortal Bone Lord"
+                v.Name == "Immortal Bone Lord" or
+                v.Name == "Mother of Chaos"
 
          then
             if v:FindFirstChild("HumanoidRootPart") then
